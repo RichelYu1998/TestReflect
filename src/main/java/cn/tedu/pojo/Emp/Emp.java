@@ -10,6 +10,9 @@ public class Emp {
     private String job;
     private Double salary;
 
+    public Emp() {
+    }
+
     public Integer getId() {
         return id;
     }
