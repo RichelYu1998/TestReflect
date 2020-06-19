@@ -5,11 +5,14 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestReflect2 {public static void main(String[] args) throws Exception {
+public class TestReflect2 {
+    public static void main(String[] args) throws Exception {
     // 1.注册数据库驱动
-    Class.forName("com.mysql.jdbc.Driver");
+    Class.forName("com.mysql.cj.jdbc.Driver");
     // 2.获取数据库连接
-    Connection conn = DriverManager.getConnection("mysql://localhost:3306/yonghedb?characterEncoding=utf-8&amp;serverTimezone=GMT%2B8","root","Syp950628");
+    Connection conn = DriverManager.getConnection("mysql://localhost:3306/yonghedb?characterEncoding=utf-8&amp;serverTimezone=GMT%2B8",
+            "root",
+            "Syp950628");
     Statement stat = conn.createStatement();
     // 4.发送SQL到服务器执行并返回执行结果
     String sql = "select * from emp";

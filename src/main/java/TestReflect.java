@@ -5,8 +5,12 @@ import java.sql.*;
 
 public class TestReflect {
     public static void main(String[] args) throws Exception {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("mysql://localhost:3306/yonghedb?characterEncoding=utf-8&amp;serverTimezone=GMT%2B8","root","Syp950628");
+        Class.forName( "com.mysql.cj.jdbc.Driver" );
+        //2.获取连接
+        Connection conn = DriverManager.getConnection(
+                "jdbc:mysql:///yonghedb?characterEncoding=utf-8&serverTimezone=GMT%2B8",
+                "root",
+                "Syp950628");
         Statement stmt = conn.createStatement();
         String sql="select * from emp where id=1";
         ResultSet rs = stmt.executeQuery(sql);
